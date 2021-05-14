@@ -1,0 +1,23 @@
+{
+  "name": "Counteragent",
+  "description": "Counteragent brings sanity back to Meduza",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.meduza.io/*"],
+      "run_at": "document_end",
+      "js": ["contentScript.js"]
+    }
+  ],
+  "permissions": ["activeTab", "scripting", "tabs"],
+  "icons": {
+    "16": "/images/counteragent16.png",
+    "32": "/images/counteragent32.png",
+    "48": "/images/counteragent48.png",
+    "128": "/images/counteragent128.png"
+  }
+}
